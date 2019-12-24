@@ -5,7 +5,7 @@ export default function _ajax(url = '', param = {}, type='GET'){
     let promise;
     return new Promise((resolve, reject)=>{
         // 判断请求的方式
-        if('GET' === type){
+        if('GET' === type.toUpperCase()){
             // 拼接 GET 请求字符串
             let paramStr = '';
             Object.keys(param).forEach(key=>{
@@ -24,7 +24,7 @@ export default function _ajax(url = '', param = {}, type='GET'){
 
             // 发送 GET 请求
             promise = axios.get(url);
-        }else if('POST' === type){
+        }else if('POST' === type.toUpperCase()){
             promise = axios.post(url, param);
         }
 

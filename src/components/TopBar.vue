@@ -1,18 +1,32 @@
 <template>
     <div class="top-bar">
-        <nav-bar title="待办消息" left-text="返回" left-arrow>
-            <icon name="search" slot="right" />
-        </nav-bar>
+        <van-nav-bar
+            :title="this.$store.state.headerTitle.text"
+            left-text="返回"
+            right-text="按钮"
+            left-arrow
+            @click-left="onClickLeft"
+            @click-right="onClickRight"
+            fixed
+        >
+
+        </van-nav-bar>
     </div>
 </template>
 
 <script>
-import { NavBar, Icon } from 'vant';
 export default {
     name: "TopBar",
-    components: {
-        NavBar,
-        Icon
+    methods: {
+        onClickLeft(){
+            console.log('返回');
+        },
+        onClickRight(){
+            console.log('按钮');
+        }
+    },
+    mounted(){
+
     }
 }
 </script>

@@ -1,20 +1,21 @@
 <template>
     <div class="app">
-        <TopBar />
-        <router-view></router-view>
-        <BtmNav />
+        <!-- <TopBar v-show="$route.meta.showTopBar" /> -->
+        <keep-alive>
+            <router-view v-if="$route.meta.keepAlive"></router-view>
+        </keep-alive>
+        <router-view v-if="!$route.meta.keepAlive"></router-view>
+        <BtmNav v-show="$route.meta.showBtmNav" />
     </div>
 </template>
 
 <script>
-//import Login from "./components/Login/Login"
 import BtmNav from "./components/BtmNav"
-import TopBar from "./components/TopBar"
+// import TopBar from "./components/TopBar"
 export default {
     name: "App",
     components: {
         BtmNav,
-        TopBar
     }
 }
 </script>
@@ -23,4 +24,5 @@ export default {
 .app
     width 100%
     height 100%
+    box-sizing border-box
 </style>

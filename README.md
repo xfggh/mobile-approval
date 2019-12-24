@@ -1,7 +1,16 @@
 # mobile-approval
 
 ## 颜色
-- #1296db
+- #66CCFF 蓝
+
+- #07C160
+
+- #FF976A
+
+- #F1F3F4 浅灰
+
+- #FF6666 红
+- #A3A3A3
 
 
 
@@ -49,3 +58,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### 打包成 apk
+cordova create you-approval cn.xfggh.app 友审批
